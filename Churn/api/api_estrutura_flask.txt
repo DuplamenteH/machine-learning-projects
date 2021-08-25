@@ -1,0 +1,2 @@
+Recebera um json com os dados, terá um pipeline que fara a transformação e aplicara o modelo,
+pegar o resultado do predict e jogaram em um condicional para retorna uma mensagem "bonita para o user"

@@ -1,0 +1,2 @@
+Terá duas telas uma com a introdução ao problema, e outra com a execução do codigo terá um pipeline que fara a transformação e aplicara o modelo,
+pegar o resultado do predict e jogaram em um condicional para retorna uma mensagem "bonita para o user"
