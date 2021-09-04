@@ -1,15 +1,16 @@
 from typing import List
 from pandas.core.frame import DataFrame
-from sklearn.preprocessing import LabelEncoder,MinMaxScaler
+import pickle
 from sklearn.impute import SimpleImputer
 import pandas as pd
 
 class Data_Prepared ():
     def __init__(self):
-        self.le = LabelEncoder()
-        self.mms = MinMaxScaler()
+        self.le = pickle.load(open('/media/cmatheus/dadosProjetos/portfolio/Churn/model/label_encoder.pkl','rb'))
+        self.mms = pickle.load(open('/media/cmatheus/dadosProjetos/portfolio/Churn/model/mms.pkl','rb'))
+        #api/api_v1/model/mms.pkl
         self.simp = SimpleImputer(strategy="mean")
-    
+
     def get_df_transform(self,df:DataFrame):
         """
         parameter:
@@ -22,7 +23,7 @@ class Data_Prepared ():
         print('[INFO]--> Transformando os valores objects em valores numericos')
         for col in df.columns:
             if df[col].dtypes == object:
-                df[col] = self.le.fit_transform(df[col])
+                df[col] = self.le.transform(df[col])
 
 
         print('[INFO]--> Verificando se há dados faltantes.')
@@ -35,10 +36,10 @@ class Data_Prepared ():
             print("[INFO]--> Não tem dados faltantes")
         
         print("[INFO]--> deixando os dados em uma escala de 0 a 1")
-        df_mms = self.mms.fit_transform(df)
+        df_mms = self.mms.transform(df)
         print("[INFO]--> Processo de tratamento terminado, dados sendo retornados")
         df_final = pd.DataFrame(data=df_mms,columns=df.columns)
-        df_final['churn'] = pd.to_numeric(df_final['churn'],downcast='integer')
+        #df_final['churn'] = pd.to_numeric(df_final['churn'],downcast='integer')
         return df_final
         '''
         def get_remove_cols(self,colunas:List,df:DataFrame):
