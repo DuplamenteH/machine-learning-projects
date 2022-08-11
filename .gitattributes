@@ -1,0 +1,8 @@
+Credit_card_fraud_project/app/api/models/model_randFlorest.pkl filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/train_clear.csv filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/train.csv filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/test.csv filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/test_clear.csv filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/fraudTest.csv filter=lfs diff=lfs merge=lfs -text
+Credit_card_fraud_project/data/fraudTrain.csv filter=lfs diff=lfs merge=lfs -text
