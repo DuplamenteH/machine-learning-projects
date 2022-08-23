@@ -35,7 +35,7 @@ def predict_pipe(data):
     data_final = create_data(data)
 
     data_pre = preprocess(df)
-    model = load_pickle('./models/model_randFlorest2.pkl')
+    model = load_pickle('./models/xgbmodel.pkl')
 
     pred = model.predict(data_pre)
     proba = model.predict_proba(data_pre)
